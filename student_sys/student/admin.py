@@ -15,7 +15,7 @@ class StudentAdmin(admin.ModelAdmin):
                 'fields':(
                     'name',
                     ('sex', 'profession'),
-                    ('emial','qq','phone'),
+                    ('email','qq','phone'),
                     'status',
                 )
             }
