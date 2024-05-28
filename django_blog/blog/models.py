@@ -68,6 +68,10 @@ class Tag(models.Model):
         verbose_name = verbose_name_plural = '标签'
 
 class Post(models.Model):
+
+    def __str__(self):
+        return self.title
+
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_DRAFT = 2
