@@ -47,7 +47,7 @@ class CategoryOwnerFilter(admin.SimpleListFilter):
         return queryset
 
 @admin.register(Post, site=custom_site)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(BaseOwnerAdmin):
 
     form = PostAdminForm
 
