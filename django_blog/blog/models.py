@@ -117,6 +117,14 @@ class Post(models.Model):
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.DO_NOTHING)
     tag = models.ManyToManyField(Tag, verbose_name='标签')
 
+    pv = models.PositiveIntegerField(
+        default=1
+    )
+
+    uv = models.PositiveIntegerField(
+        default=1
+    )
+
     owner = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE)
 
     created_time = models.DateTimeField(
@@ -127,6 +135,10 @@ class Post(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = '文章'
         ordering = ['-id']
+
+    @classmethod
+    def hot_posts(cls):
+        return cls.objects.filter(status = cls.STATUS_NORMAL)
 
     @staticmethod
     def get_by_tag(tag_id):
