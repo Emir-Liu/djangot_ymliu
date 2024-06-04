@@ -104,3 +104,21 @@ class SideBar(models.Model):
     @classmethod
     def get_all(cls):
         return cls.objects.filter(status = cls.STATUS_SHOW)
+
+    @property
+    def content_html(self):
+        '''
+        直接渲染模板
+        Returns:
+
+        '''
+        from blog.models import Post
+        from comment.models import Comment
+        # 避免循环调用的问题
+
+        result = ''
+        if self.display_type == self.DISPLAY_HTML:
+            context = {
+                'posts': Post.latest_posts()
+            }
+            
