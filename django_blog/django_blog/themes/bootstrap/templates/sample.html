@@ -14,137 +14,48 @@
 </head>
 <body>
 {#这里是页面头部#}
-    <div class="container head">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">首页</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    {% for cate in navs %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>
-                        </li>
-{#                        <a href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>#}
-                    {% endfor %}
-{#                    <li class="nav-item">#}
-{#                        <a class="nav-link" href="#">Python</a>#}
-{#                    </li>#}
-{#                    <li class="nav-item">#}
-{#                        <a class="nav-link" href="#">Django实战</a>#}
-{#                    </li>#}
-{#                    <li class="nav-item">#}
-{#                        <a class="nav-link" href="#">Tornado</a>#}
-{#                    </li>#}
-                </ul>
+<div class="container head">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">首页</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% for cate in navs %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">搜索</button>
-                </form>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">搜索</button>
+            </form>
 
-            </div>
-        </nav>
-
-        <div class="jumbotron">
-            <h1 class="display-4">博客</h1>
-            <p class="lead">基于Django的博客系统</p>
         </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1 class="display-4">博客</h1>
+        <p class="lead">基于Django的博客系统</p>
     </div>
+</div>
 {#这里是内容#}
-    {% block main %}
-    {% endblock %}
-{#    <div class="container main">#}
-{#        <div class="row">#}
-{#            <div class="col-9 post-list">#}
-{#                <div class="card post">#}
-{#                    <div class="card-body">#}
-{#                        <h5 class="card-title">#}
-{#                            <a href="#">这里是标题</a>#}
-{#                        </h5>#}
-{#                        <span class="card-link">#}
-{#                            作者：<a href="#">刘一鸣</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            分类：<a href="#">Python</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            标签：#}
-{#                            <a href="#">Python</a>#}
-{#                            <a href="#">Django</a>#}
-{#                            <a href="#">经验</a>#}
-{#                        </span>#}
-{#                        <p class="card-text">摘要#}
-{#                            <a href="#"> 完整的内容</a> </p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="card post">#}
-{#                    <div class="card-body">#}
-{#                        <h5 class="card-title">#}
-{#                            <a href="#">这里是标题</a>#}
-{#                        </h5>#}
-{#                        <span class="card-link">#}
-{#                            作者：<a href="#">刘一鸣</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            分类：<a href="#">Python</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            标签：#}
-{#                            <a href="#">Python</a>#}
-{#                            <a href="#">Django</a>#}
-{#                            <a href="#">经验</a>#}
-{#                        </span>#}
-{#                        <p class="card-text">摘要#}
-{#                            <a href="#"> 完整的内容</a> </p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="card post">#}
-{#                    <div class="card-body">#}
-{#                        <h5 class="card-title">#}
-{#                            <a href="#">这里是标题</a>#}
-{#                        </h5>#}
-{#                        <span class="card-link">#}
-{#                            作者：<a href="#">刘一鸣</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            分类：<a href="#">Python</a>#}
-{#                        </span>#}
-{#                        <span class="card-link">#}
-{#                            标签：#}
-{#                            <a href="#">Python</a>#}
-{#                            <a href="#">Django</a>#}
-{#                            <a href="#">经验</a>#}
-{#                        </span>#}
-{#                        <p class="card-text">摘要#}
-{#                            <a href="#"> 完整的内容</a> </p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{#            <div class="col-3">#}
-{#                <div class="card sidebar">#}
-{#                    <div class="card-body">#}
-{#                        <h4 class="card-title">关于博主</h4>#}
-{#                        <p>#}
-{#                            网名：yimingLiu, Python工程师#}
-{#                        </p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+{% block main %}
+{% endblock %}
+
 {#这里是页脚#}
-    <footer class="footer">
-        <div class="container">
-            <hr/>
-            <nav class="nav category">
-                <a href="#" class="navbar-link">读书</a>
-                <a href="#" class="navbar-link">产品</a>
-                <a href="#" class="navbar-link">工作经历</a>
-            </nav>
-        </div>
-        <div class="container power">
-            <span class="text-muted">Power by Typeidea</span>
-        </div>
-    </footer>
+<footer class="footer">
+    <div class="container">
+        <hr/>
+        <nav class="nav category">
+            <a href="#" class="navbar-link">读书</a>
+            <a href="#" class="navbar-link">产品</a>
+            <a href="#" class="navbar-link">工作经历</a>
+        </nav>
+    </div>
+    <div class="container power">
+        <span class="text-muted">Power by Typeidea</span>
+    </div>
+</footer>
 </body>
 </html>
